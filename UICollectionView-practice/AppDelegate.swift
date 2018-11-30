@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //基本設定
+        //建立一個 UIWindow
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        //設定 window 底色
+        self.window?.backgroundColor = UIColor.red
+        
+        // 設置根視圖控制器
+        self.window?.rootViewController = CollectionViewNormal()
+        
+        // 將 UIWindow 設置為可見的
+        self.window?.makeKeyAndVisible()
         return true
     }
 
