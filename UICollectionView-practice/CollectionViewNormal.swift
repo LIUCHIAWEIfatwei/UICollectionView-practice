@@ -14,11 +14,12 @@ class CollectionViewNormal: UIViewController, UICollectionViewDelegate, UICollec
     let Cell : String = "cell"
     let Header : String = "Header"
     let Footer : String = "Footer"
+    //基本設定
+    let fullScreenSize = UIScreen.main.bounds.size
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       //基本設定
-        let fullScreenSize = UIScreen.main.bounds.size
+       
         
        //建立 UICollectionViewFlowLayout
         let layout = UICollectionViewFlowLayout()
@@ -80,10 +81,26 @@ class CollectionViewNormal: UIViewController, UICollectionViewDelegate, UICollec
         return 2
     }
     
+    //點選 cell 後 執行動作
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("你選擇了 \(indexPath.section + 1)組的","第\(indexPath.item + 1) 的圖片。")
+    }
+    
+    //設置 reuse 的 section : header & footer
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        //建立 UICollectionReusableView
+        var reusableView = UICollectionReusableView()
+        
+        //顯示文字
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: fullScreenSize.width, height: 40))
+        
+        label.textAlignment = .center
+        
+        //header
+        
+        
+    }
     
     
-    
-    
-
 }
 
