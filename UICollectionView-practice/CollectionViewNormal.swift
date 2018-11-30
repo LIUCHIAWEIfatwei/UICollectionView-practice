@@ -9,13 +9,6 @@
 import UIKit
 
 class CollectionViewNormal: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return 0
-    }
     
 
     let Cell : String = "cell"
@@ -47,7 +40,7 @@ class CollectionViewNormal: UIViewController, UICollectionViewDelegate, UICollec
         let myCollectionView = UICollectionView(frame: CGRect(x: 0, y: 20, width: fullScreenSize.width, height: fullScreenSize.height - 20), collectionViewLayout: layout)
         
         //註冊 cell 以供繼續使用
-        myCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: Cell)
+        myCollectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: Cell)
         
         //註冊 section 的 header & footer 以供 繼續使用
         myCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Header)
@@ -57,12 +50,40 @@ class CollectionViewNormal: UIViewController, UICollectionViewDelegate, UICollec
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         
-        //加入畫面
+        //將 myCollectionView 加入畫面
         self.view.addSubview(myCollectionView)
         
         
     }
 
+    //設定 每個item 有幾個 cell
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 7
+    }
+    
+    //每個 cell 要顯示的內容
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //取得 cell
+        //轉型 MyCollectionViewCell
+        //註冊 cell 需更改為 MyCollectionViewCell.self
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell, for: indexPath) as! MyCollectionViewCell
+        
+        //設置 cell 內容
+        cell.imageView.image = UIImage(named: "0\(indexPath.item + 1).jpg")
+        cell.titleLabel.text = "0\(indexPath.item + 1)"
+        
+        return cell
+    }
+    
+    //有幾個 section
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    
+    
+    
+    
 
 }
 

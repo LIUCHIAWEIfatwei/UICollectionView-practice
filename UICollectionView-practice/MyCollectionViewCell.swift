@@ -22,6 +22,7 @@ class MyCollectionViewCell: UICollectionViewCell {
         
         //建立 UIImageView
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width/3 - 10.0, height: width/3 - 10.0))
+        
         self.addSubview(imageView)
         
         //建立 UILabel
@@ -33,12 +34,8 @@ class MyCollectionViewCell: UICollectionViewCell {
         //UILabel 文字顏色
         titleLabel.textColor = UIColor.orange
         
-        //加入畫面
+        //將 titleLabel 加入畫面
         self.addSubview(titleLabel)
-        
-        
-        
-        
         
     }
     
