@@ -12,6 +12,7 @@
 		2AC2D35121B113BE00FE629E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC2D34F21B113BE00FE629E /* Main.storyboard */; };
 		2AC2D35321B113C100FE629E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AC2D35221B113C100FE629E /* Assets.xcassets */; };
 		2AC2D35621B113C100FE629E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC2D35421B113C100FE629E /* LaunchScreen.storyboard */; };
+		2AC2D35E21B122E300FE629E /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC2D35D21B122E300FE629E /* MyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2AC2D35221B113C100FE629E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AC2D35521B113C100FE629E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AC2D35721B113C100FE629E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AC2D35D21B122E300FE629E /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				2AC2D34B21B113BE00FE629E /* AppDelegate.swift */,
 				2AC2D34D21B113BE00FE629E /* CollectionViewNormal.swift */,
+				2AC2D35D21B122E300FE629E /* MyCollectionViewCell.swift */,
 				2AC2D34F21B113BE00FE629E /* Main.storyboard */,
 				2AC2D35221B113C100FE629E /* Assets.xcassets */,
 				2AC2D35421B113C100FE629E /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				2AC2D34E21B113BE00FE629E /* CollectionViewNormal.swift in Sources */,
 				2AC2D34C21B113BE00FE629E /* AppDelegate.swift in Sources */,
+				2AC2D35E21B122E300FE629E /* MyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
