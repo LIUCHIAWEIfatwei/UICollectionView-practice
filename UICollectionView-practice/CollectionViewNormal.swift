@@ -97,7 +97,29 @@ class CollectionViewNormal: UIViewController, UICollectionViewDelegate, UICollec
         label.textAlignment = .center
         
         //header
+        if kind == UICollectionView.elementKindSectionHeader {
+            //依據前面註冊名稱，取得目前使用的HEADER
+            reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Header, for: indexPath)
+            
+            //設置Header 內容
+            reusableView.backgroundColor = UIColor.darkGray
+            label.text = "Header"
+            label.textColor = UIColor.white
+        }
+        //Footer
+        else if kind == UICollectionView.elementKindSectionFooter {
+            //依據前面註冊名稱，取得目前使用的HEADER
+            reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: Footer, for: indexPath)
+            
+            //設置Footer 內容
+            reusableView.backgroundColor = UIColor.cyan
+            label.text = "Footer"
+            label.textColor = UIColor.black
+            
+        }
         
+        reusableView.addSubview(label)
+        return reusableView
         
     }
     
